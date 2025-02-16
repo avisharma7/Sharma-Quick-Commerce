@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="container text-center">
+    <h1 class="display-5">Products</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let product of products">
+      <div class="card p-2" [routerLink]="['/product', product.id]" style="cursor: pointer;">
+        <img [src]="product.imgUrl" id="productImg" alt="{{ product.name }}">
+        <div class="card-body p-2">
+          <h6 class="card-title">{{ product.name }}</h6>
+          <p class="card-text">${{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Product Add Modal -->
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Add Product</h2>
+    <form (ngSubmit)="addProduct()">
+      <div>
+        <label>ID:</label>
+        <input type="number" [(ngModel)]="newProduct.id" name="id" required>
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="newProduct.name" name="name" required>
+      </div>
+      <div>
+        <label>Description:</label>
+        <textarea [(ngModel)]="newProduct.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type="number" [(ngModel)]="newProduct.price" name="price" required>
+      </div>
+      <div>
+        <label>Image URL:</label>
+        <input type="text" [(ngModel)]="newProduct.imgUrl" name="imgUrl" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Styling -->
+<style>
+  .modal { display: block; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+  .modal-content { max-width: 400px; }
+  .close { float: right; font-size: 24px; cursor: pointer; }
+</style>
