@@ -4,7 +4,7 @@ Sharma Quick Commerce is a full-stack e-commerce web application built with Angu
 
 ## Features
 
-- **User Authentication**: Utilizes Spring Security and Okta for secure user authentication and authorization.
+- **User Authentication & Authorization**: Implemented Spring Security with JWT for stateless authentication and role-based access control (RBAC). Used BCrypt for secure password hashing and enforced stateless sessions with SessionCreationPolicy.STATELESS.
 - **Product Catalog**: Users can browse and search for products efficiently.
 - **Shopping Cart**: Users can add products to their cart and proceed to checkout seamlessly.
 - **Swagger API Documentation**: Provides detailed API documentation using Swagger.
