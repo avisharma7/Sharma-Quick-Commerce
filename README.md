@@ -27,7 +27,7 @@ Sharma Quick Commerce is a full-stack e-commerce web application built with Angu
 - Angular
 
 ### Additional Services:
-- Okta (Authentication & Authorization)
+- JWT (Authentication & Authorization)
 - Stripe (Payment Integration) [ will be doing ]
 - Swagger API (API Documentation)
 
