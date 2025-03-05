@@ -1,0 +1,28 @@
+<!--<div class="payment-container">-->
+<!--  <h2>Pay with Razorpay</h2>-->
+
+<!--  <p>Amount to Pay: ₹{{ amount }}</p>-->
+
+<!--  <button (click)="initiatePayment()">Pay Now</button>-->
+<!--</div>-->
+<div class="payment-container">
+  <div class="payment-card">
+    <h2 class="payment-title">💳 Secure Payment</h2>
+    <p class="payment-amount">Total Amount: <span>₹{{ amount }}</span></p>
+
+    <button class="pay-btn" (click)="initiatePayment()" [disabled]="isLoading">
+      <span *ngIf="!isLoading"><i class="fas fa-credit-card"></i> Pay Now</span>
+      <span *ngIf="isLoading"><i class="fas fa-spinner fa-spin"></i> Processing...</span>
+    </button>
+
+    <!-- Success Message -->
+    <div *ngIf="paymentStatus === 'success'" class="status-message success">
+      <i class="fas fa-check-circle"></i> Payment Successful!
+    </div>
+
+    <!-- Failure Message -->
+    <div *ngIf="paymentStatus === 'failed'" class="status-message failed">
+      <i class="fas fa-times-circle"></i> Payment Failed. Try Again.
+    </div>
+  </div>
+</div>

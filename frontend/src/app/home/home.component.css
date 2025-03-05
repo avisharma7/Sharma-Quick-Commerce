@@ -1,0 +1,42 @@
+/*#productImg {*/
+/*    max-height: 200px;*/
+/*    width: auto;*/
+/*    object-fit: contain;*/
+/*}*/
+
+
+/* Container */
+.container {
+  max-width: 1200px;
+}
+
+/* Product Card Styling */
+.product-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+mat-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Pagination Buttons */
+button[mat-raised-button] {
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Add Product Button */
+button[mat-raised-button][color="primary"] {
+  font-size: 16px;
+  font-weight: bold;
+}

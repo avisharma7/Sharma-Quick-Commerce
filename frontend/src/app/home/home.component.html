@@ -1,0 +1,97 @@
+
+<!--<div class="container">-->
+<!--  <div>-->
+<!--    <button *ngIf="isSeller" (click)="navigateToAddProduct()">Add Products</button>-->
+<!--  </div>-->
+
+<!--  <div class="container text-center">-->
+<!--    <h1 class="display-5">Products</h1>-->
+
+<!--    &lt;!&ndash; Sorting &ndash;&gt;-->
+<!--    <div class="mb-3">-->
+<!--      <label>Sort By:</label>-->
+<!--      <button (click)="changeSorting('name')">Name</button>-->
+<!--      <button (click)="changeSorting('price')">Price</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="row">-->
+<!--    <div class="col-md-3 mb-4" *ngFor="let product of products">-->
+<!--      <div class="card p-2" [routerLink]="['/product', product.id]" style="cursor: pointer;">-->
+<!--        <img [src]="product.imgUrl" id="productImg" alt="{{ product.name }}">-->
+<!--        <div class="card-body p-2">-->
+<!--          <h6 class="card-title">{{ product.name }}</h6>-->
+<!--          <p class="card-text">${{ product.price }}</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+<!--  &lt;!&ndash; Pagination Controls &ndash;&gt;-->
+<!--  <div class="pagination-container text-center mt-3">-->
+<!--    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 0">Previous</button>-->
+<!--    <span> Page {{ currentPage + 1 }} of {{ totalPages }} </span>-->
+<!--    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage >= totalPages - 1">Next</button>-->
+<!--  </div>-->
+
+<div class="container mt-4">
+  <!-- Add Product Button (For Sellers) -->
+  <div class="d-flex justify-content-end mb-3" *ngIf="isSeller">
+    <button mat-raised-button color="primary" (click)="navigateToAddProduct()">+ Add Product</button>
+  </div>
+
+  <!-- Page Title -->
+  <div class="text-center mb-4">
+    <h1 class="display-5 fw-bold">Shop the Latest Products</h1>
+    <p class="text-muted">Find the best deals on top-quality products</p>
+  </div>
+
+  <!-- Sorting Controls -->
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <label class="me-2 fw-bold">Sort By:</label>
+    <button mat-button color="accent" (click)="changeSorting('name')">Name</button>
+    <button mat-button color="accent" (click)="changeSorting('price')">Price</button>
+  </div>
+
+<!--  &lt;!&ndash; Product Listing &ndash;&gt;-->
+<!--  <div class="row">-->
+<!--    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of products">-->
+<!--      <mat-card class="product-card" (click)="navigateToProduct(product.id)">-->
+<!--        <img mat-card-image [src]="product.imgUrl" alt="{{ product.name }}">-->
+<!--        <mat-card-content>-->
+<!--          <h6 class="fw-bold">{{ product.name }}</h6>-->
+<!--          <p class="text-muted">${{ product.price }}</p>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <!-- Product Listing -->
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+      <mat-card class="product-card" (click)="navigateToProduct(product.id)">
+        <!-- Product Image -->
+        <img mat-card-image class="product-img" [src]="'assets/' + product?.imgUrl" alt="{{ product.name }}">
+<!--        <img [src]="'assets/' + product?.imgUrl" alt="{{ product?.name }}" id="productImg">-->
+
+        <mat-card-content>
+          <h6 class="fw-bold">{{ product.name }}</h6>
+          <p class="text-muted">Rs: {{ product.price }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="text-center mt-4">
+    <button mat-raised-button color="warn" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 0">
+      ← Previous
+    </button>
+    <span class="mx-3 fw-bold">Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+    <button mat-raised-button color="warn" (click)="changePage(currentPage + 1)" [disabled]="currentPage >= totalPages - 1">
+      Next →
+    </button>
+  </div>
+</div>

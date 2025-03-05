@@ -1,0 +1,51 @@
+/*body {*/
+/*  background-color: #f8f9fa;*/
+/*}*/
+
+/*.container {*/
+/*  max-width: 500px;*/
+/*  background: white;*/
+/*  padding: 20px;*/
+/*  border-radius: 10px;*/
+/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 500px;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+input, textarea {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+button {
+  border-radius: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 10px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: white;
+}

@@ -1,0 +1,39 @@
+/* General Styling */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Cart Item Cards */
+.cart-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-card:hover {
+  transform: scale(1.02);
+}
+
+/* Product Image */
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Total Price Box */
+.total-box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty Cart Styling */
+.empty-cart-img {
+  max-width: 200px;
+  margin-bottom: 15px;
+}
